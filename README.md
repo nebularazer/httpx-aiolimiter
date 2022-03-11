@@ -9,18 +9,22 @@ python server.py
 
 ## run client
 
-without semaphore (this is broken on my machine)
+Problematic run, no semaphore
 ```
-python client 10000
-# python client 10000 -u (uvloop makes no difference)
-```
-
-with semaphore (this works as expected on my machine)
-```
-python client 10000 -s
+python client.py -d 500
 ```
 
-with aiohttp (this works as expected on my machine)
+With semaphore
 ```
-python client 10000 -a
+python client.py -d 500 -s
+```
+
+Using aiohttp, no semaphore
+```
+python client.py -d 500 -a
+```
+
+Using aiohttp and semaphore
+```
+python client.py -d 500 -sa
 ```
